@@ -9,3 +9,9 @@ print(a)
 
 b = input("값을 입력하세요")
 print(b +"(이)가 입력 되었습니다")
+
+print(b + 100)
+
+c = int(b) + 100 # 형변환
+print(c)
+
