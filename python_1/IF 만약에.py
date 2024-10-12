@@ -37,4 +37,3 @@ else:
 
 per = str(input("당신은 주말에 보통 무엇을 하며 시간을 보내나요? "))
 print(per)
-
