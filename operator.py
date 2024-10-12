@@ -36,7 +36,7 @@ print(a-b)
 print(a*b)
 print(a/b)
 print(a%b) # 나머지
-print(a//b) # 몫
+print(a//b) # 몫 ( 나머지는 버려짐 )
 print(a**b) # 제곱
 
 
