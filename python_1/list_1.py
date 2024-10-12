@@ -31,9 +31,3 @@ print(h)
 
 print(len(a))
 print(len(b[0]))
-
-print("==========================================")
-
-text = " Hello my frineds"
-print(text[4])
-print(text[4:])
