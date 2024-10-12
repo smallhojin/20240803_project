@@ -16,14 +16,23 @@ else:
     print("점수를 올바르게 입력해 주세요.")
 """
 
-size = int(input("자연수를 입력해 주세요"))
-print(size)
 
-if int(size % 2) == 0 :
-    print("짝수 입니다")
-elif int(size % 2) == 1 :
-    print("홀수 입니다")
+# size = int(input("자연수를 입력해 주세요"))
+# print(size)
 
+#if int(size % 2) == 0 :
+    #print("짝수 입니다")
+#elif int(size % 2) == 1 :
+   # print("홀수 입니다")
 
+con = str(input("아무 문장이나 입력해 주세요"))
+print(con)
+main_con = con
+key_con = "파이썬"
+
+if key_con in main_con :
+    print("파이썬과 관련된 이야기 이군요!")
+else:
+    print("오 그렇군요!!")
 
 
