@@ -37,4 +37,3 @@ print("==========================================")
 text = " Hello my frineds"
 print(text[4])
 print(text[4:])
-text = text.replace(_old "m",_new"s", count[1])
