@@ -25,6 +25,12 @@ for i in range(1,11):
             print(i)  """
 
 
-num = int(input("1에서 9까지 숫자 하나를 입력해 주세요"))
+"""num = int(input("1에서 9까지 숫자 하나를 입력해 주세요"))
 for j in range(1,10):
-    print(num * j)
+    print(num * j)"""
+
+"""import random
+alphabet = []
+
+for i in range(0,10):
+    alphabet.append(chr(random.randrange(65,91)))"""
