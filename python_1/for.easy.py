@@ -11,7 +11,7 @@ for i in range(1,11):
 
 ## 369 게임
 
-for i in range(1,101):
+"""for i in range(1,101):
     if i//10 == 3 or i//10 == 6 or i//10 == 9:
 
         if i%10 == 3 or i%10 == 6 or i%10 == 9:
@@ -22,4 +22,9 @@ for i in range(1,101):
         if i%10 == 3 or i%10 == 6 or i%10 == 9:
             print("짝")
         else:
-            print(i)
+            print(i)  """
+
+
+num = int(input("1에서 9까지 숫자 하나를 입력해 주세요"))
+for j in range(1,10):
+    print(num * j)
