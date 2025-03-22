@@ -29,7 +29,7 @@ print(d.values())
 
 inventory = {'콜라':10, '사이다':10, '초코 우유':10, '데미 소다':10, '바나나 우유':10, '웰치스':10, '물':10}
 price = {'콜라':1500, '사이다':1500, '초코 우유':1000, '데미 소다':1200, '바나나 우유':1000, '웰치스':1300, '물':500}
-
+"""
 mode = "manager"
 
 def print_menu():
@@ -97,3 +97,98 @@ while True:
     else:
         print_menu()
         user_input = input("메뉴를 선택하세요")
+"""
+"""
+#처음에 가지고 있는돈 50000,10000,5000원 고정
+user_input = input("음료를 선택하여 주세요")
+if user_input == "coke":
+    print("가격은 1500원 입니다")
+    num_drink = int(input("몇개를 구매하실 건가요?"))
+    user_input_2 = int(input("얼마를 가지고 계신가요?"))
+    if user_input_2 == 50000:
+        if num_drink <= 33:
+            print("거스름돈은", int(50000 - 1500 * num_drink), "원 입니다")
+        else :
+            print("돈이 부족합니다")
+    if user_input_2 == 10000:
+        if num_drink <= 6:
+            print("거스름돈은", int(10000 - 1500 * num_drink), "원 입니다")
+        else :
+            print("돈이 부족합니다")
+    if user_input_2 == 5000:
+        if num_drink <= 3:
+            print("거스름돈은",int(5000-1500*num_drink),"원 입니다")
+        else :
+            print("돈이 부족 합니다.")
+elif user_input == "soft drink":
+    print("가격은 1000원 입니다")
+    num_drink = int(input("몇개를 구매하실 건가요?"))
+    user_input_2 = int(input("얼마를 가지고 계신가요?"))
+    if user_input_2 == 50000:
+        print("거스름돈은",int(50000-1500*num_drink),"원 입니다")
+"""
+class VendingMachine:
+    def __init__(self):
+        # 자판기 음료 목록과 가격 설정
+        self.drinks = {
+            '콜라': 1500,
+            '사이다': 1200,
+            '환타': 1300,
+            '커피': 2000,
+            '물': 1000
+        }
+
+    def display_drinks(self):
+        # 음료 목록과 가격 출력
+        print("음료 목록과 가격:")
+        for drink, price in self.drinks.items():
+            print(f"{drink}: {price}원")
+
+    def purchase_drink(self):
+        # 음료 선택 및 수량, 가격 확인
+        self.display_drinks()
+
+        # 음료 선택
+        drink_choice = input("구매할 음료를 선택하세요: ")
+
+        # 선택한 음료가 유효한지 확인
+        if drink_choice not in self.drinks:
+            print("선택한 음료는 자판기에 없습니다. 다시 시도하세요.")
+            return
+
+        # 수량 입력
+        while True:
+            try:
+                quantity = int(input(f"{drink_choice}의 수량을 입력하세요 (1 이상): "))
+                if quantity < 1:
+                    print("수량은 1 이상이어야 합니다. 다시 입력하세요.")
+                else:
+                    break
+            except ValueError:
+                print("유효한 수량을 입력하세요.")
+
+        # 가격 확인 및 계산
+        total_price = self.drinks[drink_choice] * quantity
+        print(f"{drink_choice} {quantity}개의 가격은 {total_price}원입니다.")
+
+        # 사용자가 지불할 금액 입력
+        while True:
+            try:
+                paid_amount = int(input(f"{total_price}원을 지불하세요: "))
+                if paid_amount < total_price:
+                    print(f"금액이 부족합니다. {total_price}원을 지불해야 합니다.")
+                else:
+                    break
+            except ValueError:
+                print("유효한 금액을 입력하세요.")
+
+        # 거스름돈 계산
+        change = paid_amount - total_price
+        if change > 0:
+            print(f"거스름돈은 {change}원입니다.")
+        print("구매가 완료되었습니다. 즐거운 하루 되세요!")
+
+
+# 자판기 객체 생성 및 사용
+vending_machine = VendingMachine()
+vending_machine.purchase_drink()
